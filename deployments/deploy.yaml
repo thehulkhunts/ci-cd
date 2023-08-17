@@ -20,19 +20,7 @@ spec:
           - containerPort: 8000
             name: http
             protocol: TCP
-        resources:
-          requests: 
-            cpu: '1'
-            memory: '100Mi'
-          limits:
-            cpu: '1.5m'
-            memory: '150Mi'
-        livenessProbe:
-          httpGet:
-            path: /
-            port: http
-          initialDelaySeconds: 5
-          periodSeconds: 5
+
 
 ---
 apiVersion: v1
@@ -47,7 +35,8 @@ spec:
       protocol: TCP
   selector:
     app: py
-  type: NodePort
+  type: LoadBalancer
+
 
 
 
