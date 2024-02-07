@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: py-app
-        image: vinayjadhav/python-app:v1.0.0
+        image: vinayjadhav/reddit-clone-app:replaceImageTag
         ports:
-          - containerPort: 8000
+          - containerPort: 3000
             name: http
             protocol: TCP
 
@@ -31,7 +31,7 @@ metadata:
 spec:
   ports:
     - port: 80
-      targetPort: 8000
+      targetPort: 3000
       protocol: TCP
   selector:
     app: py
